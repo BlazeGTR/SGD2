@@ -1,0 +1,45 @@
+[gd_resource type="TileSet" format=3 uid="uid://b2dr3mkmgnncc"]
+
+[ext_resource type="Resource" uid="uid://bmm5niwce3tlb" path="res://Resources/Material_effects/concrete.tres" id="1_c3qmc"]
+[ext_resource type="Texture2D" uid="uid://tsdkgmo7gga1" path="res://External_resources/Art/Ceramic_Wall_Placeholder.png" id="2_djrx7"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_n07oc"]
+polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_fehxw"]
+polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_sohkg"]
+polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gl0ak"]
+polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_16sac"]
+texture = ExtResource("2_djrx7")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_n07oc")
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:0/0/custom_data_0 = ExtResource("1_c3qmc")
+1:0/0 = 0
+1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_sohkg")
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0/custom_data_0 = ExtResource("1_c3qmc")
+0:1/0 = 0
+0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_fehxw")
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:1/0/custom_data_0 = ExtResource("1_c3qmc")
+1:1/0 = 0
+1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_gl0ak")
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/0/custom_data_0 = ExtResource("1_c3qmc")
+
+[resource]
+tile_size = Vector2i(32, 32)
+occlusion_layer_0/light_mask = 8
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 3
+custom_data_layer_0/name = "surface_type"
+custom_data_layer_0/type = 24
+sources/1 = SubResource("TileSetAtlasSource_16sac")

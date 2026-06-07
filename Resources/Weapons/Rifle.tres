@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://pf1mc64uolj0"]
+
+[ext_resource type="PackedScene" uid="uid://cf1e68lgck5o3" path="res://Scenes/Weapons/Player/bullets/test_bullet.tscn" id="1_6lubl"]
+[ext_resource type="PackedScene" uid="uid://c7g4thm5hs6j0" path="res://Scenes/Effects/muzzle_flash_fx.tscn" id="1_71rrp"]
+[ext_resource type="Script" uid="uid://kdu2tkwqvkem" path="res://Resources/Weapons/weapon_resource.gd" id="2_dppv7"]
+[ext_resource type="AudioStream" uid="uid://bav4wj6dndlkh" path="res://External_resources/Audio/Rifle_shot.mp3" id="3_hopne"]
+[ext_resource type="AudioStream" uid="uid://3qjhxpiqp2w2" path="res://External_resources/Audio/item_equip.mp3" id="3_x0p01"]
+[ext_resource type="AudioStream" uid="uid://s8c4a4axwfbc" path="res://External_resources/Audio/Rifle_reload.mp3" id="4_x0p01"]
+[ext_resource type="Texture2D" uid="uid://3t3qn0mai31f" path="res://External_resources/Art/Assault_rifle_HUD_icon.png" id="6_71rrp"]
+
+[resource]
+script = ExtResource("2_dppv7")
+name = "XM177"
+price = 100
+cartridge = "5.56x45 Neo"
+action = "Full Auto"
+description = "Standard issue Enforcer rifle. In service since time immemorial. Saw the world war, saw the moon civil war, and will see every war after that"
+weapon_hud_icon = ExtResource("6_71rrp")
+muzzle_flash_effect = ExtResource("1_71rrp")
+sound_fire = ExtResource("3_hopne")
+sound_reload = ExtResource("4_x0p01")
+sound_equip = ExtResource("3_x0p01")
+pitch_variation = 0.05
+damage = 25.0
+fire_rate = 0.1
+spread = 1.0
+recoil_spread_per_shot = 0.15
+recoil_spread_recovery_speed = 15.0
+max_recoil = 5.0
+magazine_size = 30
+noise_radius = 400.0
+projectile_speed = 4000.0
+projectile_scene = ExtResource("1_6lubl")

@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://dcyi6ls8jciee"]
+
+[ext_resource type="Script" uid="uid://pkb34ct5yuu3" path="res://Scripts/player_controler.gd" id="1_yqx0t"]
+[ext_resource type="Script" uid="uid://dhgempmuynw23" path="res://Scripts/player_camera_follow_mouse.gd" id="2_ofjh0"]
+[ext_resource type="Script" uid="uid://c3m5f27b1iuvn" path="res://Scenes/Weapons/Player/weapon_manager.gd" id="3_2hnfo"]
+[ext_resource type="PackedScene" uid="uid://cbbpjx323r4v0" path="res://Scenes/hud.tscn" id="3_y18yp"]
+[ext_resource type="Texture2D" uid="uid://dxh15qjlh7vuo" path="res://External_resources/Art/Player_placeholder.png" id="6_14y0q"]
+[ext_resource type="Script" uid="uid://bhi8d725elbah" path="res://Scenes/Entities/player_health_manager.gd" id="8_2hnfo"]
+[ext_resource type="Script" uid="uid://d141qbxwcxhat" path="res://Scenes/Entities/hud_canvas_layer.gd" id="8_y18yp"]
+[ext_resource type="Script" uid="uid://bmkokrkcvi0lq" path="res://Scenes/Entities/player_interaction.gd" id="12_f5ba2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ph62a"]
+radius = 35.0143
+
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_y18yp"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wn31a"]
+polygon = PackedVector2Array(9, 20, 26, 15, 31, 0, 26, -15, 9, -21, -8, -15, -13, 0, -8, 14)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_14y0q"]
+radius = 88.005684
+
+[node name="Player" type="CharacterBody2D" unique_id=1955862303 groups=["Player"]]
+visibility_layer = 4
+collision_mask = 4
+motion_mode = 1
+script = ExtResource("1_yqx0t")
+max_speed = 500.0
+
+[node name="HudCanvasLayer" type="CanvasLayer" parent="." unique_id=76578071]
+script = ExtResource("8_y18yp")
+
+[node name="HUD" parent="HudCanvasLayer" unique_id=1604261022 instance=ExtResource("3_y18yp")]
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerHitbox" type="CollisionShape2D" parent="." unique_id=911604229]
+shape = SubResource("CircleShape2D_ph62a")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=927654953]
+position = Vector2(200, 0)
+zoom = Vector2(0.395, 0.395)
+position_smoothing_enabled = true
+position_smoothing_speed = 20.0
+script = ExtResource("2_ofjh0")
+distance_to_mouse_weight = 0.3
+max_mouse_distance = 400
+
+[node name="WeaponManager" type="Node2D" parent="." unique_id=418630718]
+script = ExtResource("3_2hnfo")
+
+[node name="SfxPlayer" type="AudioStreamPlayer2D" parent="WeaponManager" unique_id=1983693695]
+stream = SubResource("AudioStreamPolyphonic_y18yp")
+max_polyphony = 32
+bus = &"SFX"
+
+[node name="WeaponVisual" type="Sprite2D" parent="WeaponManager" unique_id=189396272]
+
+[node name="MuzzlePosition" type="Marker2D" parent="WeaponManager" unique_id=1587353367]
+position = Vector2(88, 25)
+
+[node name="HitscanRaycast" type="RayCast2D" parent="WeaponManager" unique_id=2107057981]
+position = Vector2(88, 25)
+target_position = Vector2(10, 0)
+collision_mask = 6
+
+[node name="ShootTimer" type="Timer" parent="WeaponManager" unique_id=79306088]
+one_shot = true
+
+[node name="ReloadTimer" type="Timer" parent="WeaponManager" unique_id=1076733655]
+one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1110545622]
+light_mask = 2
+z_index = 5
+position = Vector2(1, -1)
+rotation = 1.5708
+texture = ExtResource("6_14y0q")
+offset = Vector2(2, -27.75)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D" unique_id=2047666603]
+show_behind_parent = true
+position = Vector2(1.0000381, 10)
+rotation = -1.5708
+occluder = SubResource("OccluderPolygon2D_wn31a")
+
+[node name="ShoutRaycast" type="RayCast2D" parent="." unique_id=1859417399]
+enabled = false
+collision_mask = 6
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=329146328]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("12_f5ba2")
+
+[node name="InteractionShape" type="CollisionShape2D" parent="InteractionArea" unique_id=609561394]
+shape = SubResource("CircleShape2D_14y0q")
+
+[node name="InteractionRaycast" type="RayCast2D" parent="InteractionArea" unique_id=2076569523]
+enabled = false
+collision_mask = 8
+
+[node name="HealthComponent" type="Node" parent="." unique_id=138052064]
+script = ExtResource("8_2hnfo")
+
+[connection signal="timeout" from="WeaponManager/ShootTimer" to="WeaponManager" method="_on_shoot_timer_timeout"]
+[connection signal="timeout" from="WeaponManager/ReloadTimer" to="WeaponManager" method="_on_reload_timer_timeout"]

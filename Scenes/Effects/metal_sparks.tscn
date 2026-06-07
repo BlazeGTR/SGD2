@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://depjhngq0j0cv"]
+
+[ext_resource type="Texture2D" uid="uid://bwkr5d3676437" path="res://External_resources/Art/spark.png" id="1_ettk1"]
+[ext_resource type="Script" uid="uid://btonwabthtx2" path="res://Scenes/Effects/metal_sparks.gd" id="1_x84wv"]
+
+[sub_resource type="Curve" id="Curve_x84wv"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(0.50515467, -11.235931), 0.0, 0.0, 0, 0, Vector2(1, 200), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_xck4q"]
+curve = SubResource("Curve_x84wv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5yil7"]
+lifetime_randomness = 1.0
+particle_flag_align_y = true
+particle_flag_disable_z = true
+angle_min = 1.0728835e-05
+angle_max = 1.0728835e-05
+spread = 76.667
+flatness = 0.241
+initial_velocity_min = 133.62
+initial_velocity_max = 250.59
+gravity = Vector3(0, 0, 0)
+tangential_accel_min = -18.970001
+tangential_accel_max = 12.919997
+tangential_accel_curve = SubResource("CurveTexture_xck4q")
+damping_min = 90.203
+damping_max = 100.00001
+scale_min = 0.79999995
+scale_max = 1.1999999
+
+[node name="MetalSparks" type="Node2D" unique_id=472192325]
+script = ExtResource("1_x84wv")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=759448898]
+self_modulate = Color(45.00919, 45.00919, 0, 1)
+emitting = false
+texture = ExtResource("1_ettk1")
+lifetime = 0.15000000000000002
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_5yil7")
+
+[connection signal="finished" from="GPUParticles2D" to="." method="_on_gpu_particles_2d_finished"]

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ddr3251k6dvt2"]
+
+[ext_resource type="Script" uid="uid://b13ad7v7pfasc" path="res://Scenes/Weapons/Player/bullets/test_bullet.gd" id="1_cl11u"]
+[ext_resource type="Texture2D" uid="uid://dvvt3gxsabmb7" path="res://External_resources/Art/bullet.png" id="2_4rhkq"]
+
+[node name="TestBullet" type="Node2D" unique_id=1107109401]
+script = ExtResource("1_cl11u")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=546259374]
+self_modulate = Color(45.00919, 45.00919, 0, 1)
+light_mask = 0
+texture = ExtResource("2_4rhkq")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=2069821357]
+position = Vector2(-4, 0)
+target_position = Vector2(8, 0)
+collision_mask = 5
+hit_from_inside = true
+collide_with_areas = true

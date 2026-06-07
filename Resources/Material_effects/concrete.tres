@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SurfaceMaterial" format=3 uid="uid://bmm5niwce3tlb"]
+
+[ext_resource type="Script" uid="uid://csmdvkj3gfwug" path="res://Resources/Material_effects/surface_material.gd" id="1_kpfq7"]
+[ext_resource type="PackedScene" uid="uid://depjhngq0j0cv" path="res://Scenes/Effects/metal_sparks.tscn" id="1_uis26"]
+
+[resource]
+script = ExtResource("1_kpfq7")
+name = "concrete"
+hit_effect = ExtResource("1_uis26")
+debris_color = Color(0.61745477, 0.61745477, 0.6174547, 1)
+metadata/_custom_type_script = "uid://csmdvkj3gfwug"

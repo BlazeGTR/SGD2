@@ -1,0 +1,16 @@
+[gd_resource type="TileSet" format=3 uid="uid://ba7qkach3ual2"]
+
+[ext_resource type="Texture2D" uid="uid://b1m8i6p2o4l57" path="res://External_resources/Art/Ceramic_tile.png" id="1_wrinw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yj75u"]
+texture = ExtResource("1_wrinw")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[resource]
+tile_size = Vector2i(32, 32)
+occlusion_layer_0/light_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_yj75u")

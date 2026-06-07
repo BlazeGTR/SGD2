@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cf1gsmff4lhvc"]
+
+[ext_resource type="Script" uid="uid://bjsgs0whtv2mu" path="res://Scenes/Prefabs/test_interactable.gd" id="1_37psm"]
+[ext_resource type="Texture2D" uid="uid://dvvt3gxsabmb7" path="res://External_resources/Art/bullet.png" id="1_vub7c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37psm"]
+size = Vector2(132, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vub7c"]
+size = Vector2(132, 74)
+
+[node name="Test_interactable" type="StaticBody2D" unique_id=1116423673]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1694083760]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_37psm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1040887721]
+position = Vector2(1.0000076, -1)
+scale = Vector2(16.5, 18.25)
+texture = ExtResource("1_vub7c")
+
+[node name="Interact_area" type="Area2D" parent="." unique_id=2068027620]
+collision_layer = 12
+collision_mask = 3
+script = ExtResource("1_37psm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interact_area" unique_id=1931938530]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_vub7c")

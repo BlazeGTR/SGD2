@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MissionResource" format=3 uid="uid://cs58b6k8ebgg6"]
+
+[ext_resource type="Script" uid="uid://cymbjap6w8yb2" path="res://Scripts/obective_resource.gd" id="1_i8cbl"]
+[ext_resource type="Script" uid="uid://k3ivyxo5uo1v" path="res://Missions/mission_resource.gd" id="2_jehk8"]
+
+[resource]
+script = ExtResource("2_jehk8")
+mission_id = "level_2"
+title = "Test misja 2"
+description = "asdasd"
+briefing_text = "Test 22"
+level_scene_path = "Test"
+metadata/_custom_type_script = "uid://k3ivyxo5uo1v"

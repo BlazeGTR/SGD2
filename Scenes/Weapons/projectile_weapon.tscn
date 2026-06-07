@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bpn7nc8q04km6"]
+
+[ext_resource type="Script" uid="uid://goy3vg8f7glo" path="res://Scenes/Maps/projectile_weapon.gd" id="1_qkd1r"]
+
+[node name="ProjectileWeapon" type="Node2D" unique_id=512631343]
+script = ExtResource("1_qkd1r")
+full_auto = false
+
+[node name="ShootingCooldown" type="Timer" parent="." unique_id=302169171]
+
+[connection signal="timeout" from="ShootingCooldown" to="." method="_on_shooting_cooldown_timeout"]

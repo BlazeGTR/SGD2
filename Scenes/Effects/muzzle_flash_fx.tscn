@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://c7g4thm5hs6j0"]
+
+[ext_resource type="Texture2D" uid="uid://bi54b6f7yl4ij" path="res://External_resources/Art/jettelly_muzzle_flash_4x4x_01.png" id="1_gsh8v"]
+[ext_resource type="Script" uid="uid://jb4866xxo8g2" path="res://Scenes/Effects/animated_sprite_2d.gd" id="2_a4nv5"]
+
+[sub_resource type="Gradient" id="Gradient_a4nv5"]
+offsets = PackedFloat32Array(0, 0.20754717, 0.8773585)
+colors = PackedColorArray(0.29031694, 0.2794065, 0, 0.12156863, 0.17481449, 0.16824476, 0, 0.47105208, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_awgdo"]
+gradient = SubResource("Gradient_a4nv5")
+width = 1024
+height = 1024
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+metadata/_snap_count = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5lcy"]
+atlas = ExtResource("1_gsh8v")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qoo8"]
+atlas = ExtResource("1_gsh8v")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vd6h"]
+atlas = ExtResource("1_gsh8v")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iglhw"]
+atlas = ExtResource("1_gsh8v")
+region = Rect2(0, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pb157"]
+atlas = ExtResource("1_gsh8v")
+region = Rect2(512, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ic47v"]
+atlas = ExtResource("1_gsh8v")
+region = Rect2(1024, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwnpl"]
+atlas = ExtResource("1_gsh8v")
+region = Rect2(1536, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cmvq"]
+atlas = ExtResource("1_gsh8v")
+region = Rect2(0, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsjdt"]
+atlas = ExtResource("1_gsh8v")
+region = Rect2(512, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_puctf"]
+atlas = ExtResource("1_gsh8v")
+region = Rect2(1024, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dga5i"]
+atlas = ExtResource("1_gsh8v")
+region = Rect2(1536, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xltx"]
+atlas = ExtResource("1_gsh8v")
+region = Rect2(0, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrsj3"]
+atlas = ExtResource("1_gsh8v")
+region = Rect2(512, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uukqv"]
+atlas = ExtResource("1_gsh8v")
+region = Rect2(1024, 1536, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kmjp4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5lcy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qoo8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vd6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iglhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pb157")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ic47v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwnpl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cmvq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsjdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_puctf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dga5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xltx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrsj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uukqv")
+}],
+"loop": false,
+"name": &"default",
+"speed": 120.0
+}]
+
+[node name="MuzzleFlashFX" type="Node2D" unique_id=497119920]
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1511925370]
+range_item_cull_mask = 6
+shadow_enabled = true
+shadow_item_cull_mask = 8
+texture = SubResource("GradientTexture2D_awgdo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1979961437]
+self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(53, 0)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_kmjp4")
+autoplay = "default"
+frame = 13
+frame_progress = 1.0
+script = ExtResource("2_a4nv5")
+flash_energy = 1.0
