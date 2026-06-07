@@ -8,9 +8,9 @@
 [ext_resource type="Script" uid="uid://kdu2tkwqvkem" path="res://Resources/Weapons/weapon_resource.gd" id="4_5ncfx"]
 [ext_resource type="PackedScene" uid="uid://ddr3251k6dvt2" path="res://Scenes/Weapons/Enemies/enemy_bullet.tscn" id="5_xmfpm"]
 [ext_resource type="Texture2D" uid="uid://dxh15qjlh7vuo" path="res://External_resources/Art/Player_placeholder.png" id="6_5ncfx"]
-[ext_resource type="AudioStream" uid="uid://dojoy2uvunupr" path="res://External_resources/Audio/Pistol_shot.mp3" id="7_plmqs"]
+[ext_resource type="AudioStream" uid="uid://dojoy2uvunupr" path="res://External_resources/Audio/Guns/Pistol_shot.mp3" id="7_plmqs"]
 [ext_resource type="Script" uid="uid://dw8tsyh86qgoy" path="res://Scenes/Entities/Enemies/enemy_interact_area.gd" id="8_hrb7o"]
-[ext_resource type="AudioStream" uid="uid://s8c4a4axwfbc" path="res://External_resources/Audio/Rifle_reload.mp3" id="8_pb4lw"]
+[ext_resource type="AudioStream" uid="uid://s8c4a4axwfbc" path="res://External_resources/Audio/Guns/Rifle_reload.mp3" id="8_pb4lw"]
 [ext_resource type="Texture2D" uid="uid://wjf71u31um0w" path="res://External_resources/Art/Enemy_Surrender.png" id="9_i5qoo"]
 [ext_resource type="Texture2D" uid="uid://drjnlolcxs2o" path="res://External_resources/Art/Arrested_sprite.png" id="10_ymwpi"]
 
