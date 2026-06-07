@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b85j0ji5pwrmh"]
 
-[ext_resource type="Texture2D" uid="uid://dxh15qjlh7vuo" path="res://External_resources/Art/Player_placeholder.png" id="1_idiqv"]
-[ext_resource type="Texture2D" uid="uid://p2acp3kfvxks" path="res://External_resources/Art/Civilian_sprite.png" id="2_di28j"]
-[ext_resource type="Texture2D" uid="uid://drjnlolcxs2o" path="res://External_resources/Art/Arrested_sprite.png" id="3_7724v"]
+[ext_resource type="Texture2D" uid="uid://dxh15qjlh7vuo" path="res://External_resources/Art/Actors/Player_placeholder.png" id="1_idiqv"]
+[ext_resource type="Texture2D" uid="uid://p2acp3kfvxks" path="res://External_resources/Art/Actors/Civilian_sprite.png" id="2_di28j"]
+[ext_resource type="Texture2D" uid="uid://drjnlolcxs2o" path="res://External_resources/Art/Actors/Arrested_sprite.png" id="3_7724v"]
 [ext_resource type="Script" uid="uid://bcxgndy8fyja3" path="res://Scenes/Prefabs/extraction_area.gd" id="4_ewl0n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o22mh"]

@@ -11,6 +11,9 @@ colors = PackedColorArray(0.2545983, 0.00016176746, 0.3109046, 1, 0.4666667, 0, 
 gradient = SubResource("Gradient_1ehe0")
 fill_from = Vector2(0.22222222, 0.53418803)
 
+[sub_resource type="SystemFont" id="SystemFont_1ehe0"]
+font_names = PackedStringArray("ROG Fonts v1.6")
+
 [sub_resource type="SystemFont" id="SystemFont_48xlc"]
 font_names = PackedStringArray("Impact")
 
@@ -35,19 +38,22 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_28flt")
 
 [node name="Label" type="Label" parent="." unique_id=1608288501]
-visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.212
 anchor_right = 1.0
-anchor_bottom = 0.399
-offset_top = -49.32
-offset_bottom = -44.64
+anchor_bottom = 1.0
+offset_left = 201.0
+offset_top = 20.000002
+offset_right = 3.0
+offset_bottom = -250.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 52
-text = "Title"
+rotation = -0.084129356
+theme_override_fonts/font = SubResource("SystemFont_1ehe0")
+theme_override_font_sizes/font_size = 74
+text = "ENFORCER"
 horizontal_alignment = 1
+uppercase = true
 
 [node name="MainButtons" type="MarginContainer" parent="." unique_id=534682792]
 layout_mode = 1
@@ -149,6 +155,7 @@ theme_override_font_sizes/font_size = 43
 text = "Back"
 
 [node name="SettingsPanel" type="MarginContainer" parent="." unique_id=1230460264]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

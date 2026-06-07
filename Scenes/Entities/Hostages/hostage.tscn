@@ -4,9 +4,9 @@
 [ext_resource type="Script" uid="uid://bhkkeq0etvmsi" path="res://Scenes/Entities/Enemies/Components/Health/health_component.gd" id="2_3o530"]
 [ext_resource type="Script" uid="uid://cqrd2mgeh2e1b" path="res://Scenes/Entities/Enemies/Components/Locomotion/locomotion_component.gd" id="3_q7jr5"]
 [ext_resource type="Script" uid="uid://sup32d81ubrq" path="res://Scenes/Entities/Hostages/civilian_brain_component.gd" id="4_syv18"]
-[ext_resource type="Texture2D" uid="uid://p2acp3kfvxks" path="res://External_resources/Art/Civilian_sprite.png" id="5_syv18"]
-[ext_resource type="Texture2D" uid="uid://wjf71u31um0w" path="res://External_resources/Art/Enemy_Surrender.png" id="6_wt1t2"]
-[ext_resource type="Texture2D" uid="uid://drjnlolcxs2o" path="res://External_resources/Art/Arrested_sprite.png" id="7_ukdax"]
+[ext_resource type="Texture2D" uid="uid://p2acp3kfvxks" path="res://External_resources/Art/Actors/Civilian_sprite.png" id="5_syv18"]
+[ext_resource type="Texture2D" uid="uid://wjf71u31um0w" path="res://External_resources/Art/Actors/Enemy_Surrender.png" id="6_wt1t2"]
+[ext_resource type="Texture2D" uid="uid://drjnlolcxs2o" path="res://External_resources/Art/Actors/Arrested_sprite.png" id="7_ukdax"]
 [ext_resource type="Script" uid="uid://dw8tsyh86qgoy" path="res://Scenes/Entities/Enemies/enemy_interact_area.gd" id="8_j4i6m"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_748yg"]
@@ -92,6 +92,7 @@ text = "DEBUG LABEL"
 label_settings = SubResource("LabelSettings_5ncfx")
 
 [node name="Head" type="Node2D" parent="." unique_id=1308694110]
+visible = false
 
 [node name="RayCast2D" type="RayCast2D" parent="Head" unique_id=1407645394]
 enabled = false

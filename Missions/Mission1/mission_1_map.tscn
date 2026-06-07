@@ -127,84 +127,73 @@ amount_of_blinking_lights = 5
 [node name="NeonWallLight" parent="Lights/WallLights" unique_id=982380542 instance=ExtResource("11_mptwn")]
 position = Vector2(546, 521)
 noise_speed = 40.0
-noise_intensity = 0.04
 
 [node name="NeonWallLight2" parent="Lights/WallLights" unique_id=1387150518 instance=ExtResource("11_mptwn")]
 position = Vector2(12, 524)
 noise_speed = 40.0
-noise_intensity = 0.04
 
 [node name="NeonWallLight3" parent="Lights/WallLights" unique_id=1152404971 instance=ExtResource("11_mptwn")]
 position = Vector2(209, 171)
 noise_speed = 40.0
-noise_intensity = 0.04
 
 [node name="NeonWallLight4" parent="Lights/WallLights" unique_id=621204787 instance=ExtResource("12_b8kaf")]
 position = Vector2(-84, -471)
 noise_speed = 40.0
-noise_intensity = 0.04
+noise_intensity = 0.06
 
 [node name="NeonWallLight5" parent="Lights/WallLights" unique_id=1182973548 instance=ExtResource("12_b8kaf")]
 position = Vector2(715, -500)
 noise_speed = 40.0
-noise_intensity = 0.04
+noise_intensity = 0.06
 
 [node name="NeonWallLight6" parent="Lights/WallLights" unique_id=1663355769 instance=ExtResource("12_b8kaf")]
 position = Vector2(-105, 110)
 noise_speed = 40.0
-noise_intensity = 0.04
+noise_intensity = 0.06
 
 [node name="NeonWallLight7" parent="Lights/WallLights" unique_id=1985417638 instance=ExtResource("12_b8kaf")]
 position = Vector2(795, -160)
 noise_speed = 40.0
-noise_intensity = 0.04
+noise_intensity = 0.06
 
 [node name="NeonWallLight8" parent="Lights/WallLights" unique_id=1032700675 instance=ExtResource("11_mptwn")]
 position = Vector2(-383, -732)
 noise_speed = 40.0
-noise_intensity = 0.04
 
 [node name="NeonWallLight9" parent="Lights/WallLights" unique_id=660149421 instance=ExtResource("11_mptwn")]
 position = Vector2(-133, -1371)
 noise_speed = 40.0
-noise_intensity = 0.04
 
 [node name="NeonWallLight10" parent="Lights/WallLights" unique_id=1757985513 instance=ExtResource("11_mptwn")]
 position = Vector2(-412, -1048)
 noise_speed = 40.0
-noise_intensity = 0.04
 
 [node name="NeonWallLight11" parent="Lights/WallLights" unique_id=656015938 instance=ExtResource("11_mptwn")]
 position = Vector2(292, -670)
 noise_speed = 40.0
-noise_intensity = 0.04
 
 [node name="NeonWallLight12" parent="Lights/WallLights" unique_id=1061622471 instance=ExtResource("11_mptwn")]
 position = Vector2(738, -960)
 noise_speed = 40.0
-noise_intensity = 0.04
 
 [node name="NeonWallLight13" parent="Lights/WallLights" unique_id=1550314507 instance=ExtResource("11_mptwn")]
 position = Vector2(-662, -1258)
 noise_speed = 40.0
-noise_intensity = 0.04
 
 [node name="NeonWallLight14" parent="Lights/WallLights" unique_id=1333971434 instance=ExtResource("11_mptwn")]
 position = Vector2(-288, -1723)
 noise_speed = 40.0
-noise_intensity = 0.04
 
 [node name="NeonWallLight15" parent="Lights/WallLights" unique_id=1781351919 instance=ExtResource("11_mptwn")]
 position = Vector2(89, -1722)
 noise_speed = 40.0
-noise_intensity = 0.04
 
 [node name="OutsideLights" type="Node2D" parent="Lights" unique_id=781326002]
 
 [node name="PointLight2D" type="PointLight2D" parent="Lights/OutsideLights" unique_id=309664995]
 position = Vector2(-575, 830)
 color = Color(1, 0.928, 0.73, 1)
-energy = 0.2
+energy = 0.1
 range_item_cull_mask = 6
 shadow_enabled = true
 shadow_filter_smooth = 0.5
@@ -212,6 +201,7 @@ shadow_item_cull_mask = 14
 texture = SubResource("GradientTexture2D_qhqih")
 
 [node name="PointLight2D2" type="PointLight2D" parent="Lights/OutsideLights" unique_id=1440527043]
+visible = false
 position = Vector2(1037, -1749)
 color = Color(1, 0.928, 0.73, 1)
 energy = 0.2
