@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://cqc6phjwsl3ga"]
+
+[ext_resource type="Script" uid="uid://kdu2tkwqvkem" path="res://Resources/Weapons/weapon_resource.gd" id="1_tenyk"]
+[ext_resource type="AudioStream" uid="uid://3qjhxpiqp2w2" path="res://External_resources/Audio/item_equip.mp3" id="2_ux1j2"]
+[ext_resource type="AudioStream" uid="uid://c1mv7c85e8swf" path="res://External_resources/Audio/Guns/Taser_shot.wav" id="3_7g18b"]
+[ext_resource type="AudioStream" uid="uid://s8c4a4axwfbc" path="res://External_resources/Audio/Guns/Rifle_reload.mp3" id="4_x2ro4"]
+
+[resource]
+script = ExtResource("1_tenyk")
+name = "Taser"
+attack_type = 1
+slotype = 2
+price = 50
+manufacturer = "Cetral Self-Defence"
+cartridge = "23x75 Taser"
+action = "Single Shot"
+description = "Civilian grade taser, slow to reload but gets the job done if you want to capture someone without causing too much damage. Just watch for augs."
+sound_fire = ExtResource("3_7g18b")
+sound_reload = ExtResource("4_x2ro4")
+sound_equip = ExtResource("2_ux1j2")
+pitch_variation = 0.03
+damage = 10.0
+morale_damage = 100.0
+is_full_auto = false
+spread = 0.0
+magazine_size = 1
+reload_time = 1.0
+stun_time = 3.0
+metadata/_custom_type_script = "uid://kdu2tkwqvkem"

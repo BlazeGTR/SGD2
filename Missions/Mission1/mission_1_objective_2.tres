@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ObjectiveResource" format=3 uid="uid://ie7h8d8l7r7b"]
+
+[ext_resource type="Script" uid="uid://cymbjap6w8yb2" path="res://Scripts/obective_resource.gd" id="1_h8hjb"]
+
+[resource]
+script = ExtResource("1_h8hjb")
+title = "Arrest 1 enemy"
+description = "Arrest at least one enemy for interrogation"
+valid_events = Array[String](["enemy_arrested"])
+fail_if_not_enough_enemies = true
+metadata/_custom_type_script = "uid://cymbjap6w8yb2"

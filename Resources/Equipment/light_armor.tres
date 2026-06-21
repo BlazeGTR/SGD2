@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ArmorResource" format=3 uid="uid://c3rw4pqb3op1r"]
+
+[ext_resource type="Texture2D" uid="uid://hcaew2y1xfup" path="res://External_resources/Art/WeaponIcons/shit_vest.png" id="1_e22fm"]
+[ext_resource type="Script" uid="uid://bsl04tn7evq0c" path="res://Resources/Equipment/armor_resource.gd" id="1_gvqxq"]
+
+[resource]
+script = ExtResource("1_gvqxq")
+item_id = "light_armor"
+name = "Light Vest"
+manufacturer = "Budget Arms"
+material = "Kevlar"
+description = "Simple kevlar vest, hopelesly outdated but light"
+bonus_health = 0
+speed_multiplier = 1.1
+armor_icon = ExtResource("1_e22fm")
+metadata/_custom_type_script = "uid://bsl04tn7evq0c"

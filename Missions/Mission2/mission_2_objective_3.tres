@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ObjectiveResource" format=3 uid="uid://c8wrspjsvcnfh"]
+
+[ext_resource type="Script" uid="uid://cymbjap6w8yb2" path="res://Scripts/obective_resource.gd" id="1_kkih2"]
+
+[resource]
+script = ExtResource("1_kkih2")
+title = "Do not kill any hostages"
+description = "Do not kill any hsotages"
+fail_events = Array[String](["hostage_killed", "arrested_hostage_killed"])
+metadata/_custom_type_script = "uid://cymbjap6w8yb2"

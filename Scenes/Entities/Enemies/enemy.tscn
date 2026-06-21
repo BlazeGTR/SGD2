@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://ca6td0jvrkvmu"]
+
+[ext_resource type="Script" uid="uid://b17a1n4g1lisg" path="res://Scenes/Entities/Enemies/enemy.gd" id="1_4cflg"]
+[ext_resource type="Script" uid="uid://bhkkeq0etvmsi" path="res://Scenes/Entities/Enemies/Components/Health/health_component.gd" id="1_748yg"]
+[ext_resource type="Script" uid="uid://cqrd2mgeh2e1b" path="res://Scenes/Entities/Enemies/Components/Locomotion/locomotion_component.gd" id="1_n8464"]
+[ext_resource type="Script" uid="uid://b44utnruuoglk" path="res://Scenes/Entities/Enemies/Components/Brains/brain_component.gd" id="3_748yg"]
+[ext_resource type="Script" uid="uid://cwhefd4iqg3xn" path="res://Scenes/Entities/Enemies/weapon_component.gd" id="3_w4jud"]
+[ext_resource type="Script" uid="uid://kdu2tkwqvkem" path="res://Resources/Weapons/weapon_resource.gd" id="4_5ncfx"]
+[ext_resource type="PackedScene" uid="uid://jttmtyv41wpd" path="res://Resources/Weapons/dropped_gun.tscn" id="5_pb4lw"]
+[ext_resource type="PackedScene" uid="uid://ddr3251k6dvt2" path="res://Scenes/Weapons/Enemies/enemy_bullet.tscn" id="5_xmfpm"]
+[ext_resource type="Texture2D" uid="uid://dxh15qjlh7vuo" path="res://External_resources/Art/Actors/Player_placeholder.png" id="6_5ncfx"]
+[ext_resource type="AudioStream" uid="uid://dojoy2uvunupr" path="res://External_resources/Audio/Pistol_shot.mp3" id="7_plmqs"]
+[ext_resource type="Script" uid="uid://dw8tsyh86qgoy" path="res://Scenes/Entities/Enemies/enemy_interact_area.gd" id="8_hrb7o"]
+[ext_resource type="AudioStream" uid="uid://s8c4a4axwfbc" path="res://External_resources/Audio/Rifle_reload.mp3" id="8_pb4lw"]
+[ext_resource type="Texture2D" uid="uid://wjf71u31um0w" path="res://External_resources/Art/Actors/Enemy_Surrender.png" id="9_i5qoo"]
+[ext_resource type="Texture2D" uid="uid://drjnlolcxs2o" path="res://External_resources/Art/Actors/Arrested_sprite.png" id="10_ymwpi"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_748yg"]
+polygon = PackedVector2Array(9, 20, 26, 15, 31, 0, 26, -15, 9, -21, -8, -15, -13, 0, -8, 14)
+
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_plmqs"]
+
+[sub_resource type="Resource" id="Resource_4cflg"]
+script = ExtResource("4_5ncfx")
+name = "AI_Weapon"
+dropped_weapon_object = ExtResource("5_pb4lw")
+sound_fire = ExtResource("7_plmqs")
+sound_reload = ExtResource("8_pb4lw")
+projectile_scene = ExtResource("5_xmfpm")
+metadata/_custom_type_script = "uid://kdu2tkwqvkem"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a27yh"]
+radius = 35.014282
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5ncfx"]
+light_mode = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_5ncfx"]
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xmfpm"]
+radius = 30.0
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1921328070]
+collision_layer = 2
+collision_mask = 6
+script = ExtResource("1_4cflg")
+score = 100
+score_surrender_multiplier = 2.0
+
+[node name="Shadow" type="LightOccluder2D" parent="." unique_id=1186098675]
+show_behind_parent = true
+position = Vector2(-1, 10)
+rotation = -1.5708
+occluder = SubResource("OccluderPolygon2D_748yg")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=597935579]
+script = ExtResource("1_748yg")
+
+[node name="LocomotionComponent" type="Node" parent="." unique_id=1112882924]
+script = ExtResource("1_n8464")
+speed = 200.0
+
+[node name="SfxPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1520671962]
+stream = SubResource("AudioStreamPolyphonic_plmqs")
+max_polyphony = 32
+bus = &"SFX"
+
+[node name="WeaponComponent" type="Node" parent="." unique_id=1470217053]
+script = ExtResource("3_w4jud")
+weapon_data = SubResource("Resource_4cflg")
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=1587717816]
+position = Vector2(88, 26)
+
+[node name="BrainComponent" type="Node2D" parent="." unique_id=260141064]
+script = ExtResource("3_748yg")
+attack_range = 1000.0
+stop_range = 300.0
+resume_range = 350.0
+run_and_gun = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1537779751]
+shape = SubResource("CircleShape2D_a27yh")
+
+[node name="NormalSprite" type="Sprite2D" parent="." unique_id=1282506855]
+light_mask = 2
+z_index = 10
+position = Vector2(28, 2)
+rotation = 1.5707964
+texture = ExtResource("6_5ncfx")
+
+[node name="SurrenderSprite" type="Sprite2D" parent="." unique_id=82890729]
+visible = false
+light_mask = 2
+z_index = 10
+position = Vector2(3, 2)
+rotation = 1.5707964
+texture = ExtResource("9_i5qoo")
+
+[node name="ArrestedSprite" type="Sprite2D" parent="." unique_id=1714339799]
+visible = false
+light_mask = 2
+z_index = 10
+position = Vector2(-5, -2)
+rotation = 1.5707964
+texture = ExtResource("10_ymwpi")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1972140560]
+path_desired_distance = 50.0
+target_desired_distance = 50.0
+avoidance_enabled = true
+max_speed = 1000.0
+
+[node name="DebugLabel" type="Label" parent="." unique_id=1345581941]
+visible = false
+light_mask = 0
+material = SubResource("CanvasItemMaterial_5ncfx")
+offset_left = -45.0
+offset_top = -88.0
+offset_right = 62.0
+offset_bottom = -65.0
+text = "DEBUG LABEL"
+label_settings = SubResource("LabelSettings_5ncfx")
+
+[node name="Head" type="Node2D" parent="." unique_id=1308694110]
+visible = false
+
+[node name="RayCast2D" type="RayCast2D" parent="Head" unique_id=1407645394]
+enabled = false
+exclude_parent = false
+target_position = Vector2(0, 0)
+collision_mask = 5
+
+[node name="VisionConeNormal" type="Area2D" parent="Head" unique_id=560682383]
+collision_layer = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Head/VisionConeNormal" unique_id=1039926877]
+light_mask = 0
+rotation = 1.5707964
+polygon = PackedVector2Array(1.0000049, 112, 85, 76, 104, -4.545984e-06, 775.99994, -993.00006, 410.99994, -1214, 2.9999435, -1293, -363.00006, -1231, -829.00006, -1009.99994, -104, -0.99999547, -70, 83)
+
+[node name="VisionConeAlert" type="Area2D" parent="Head" unique_id=5987318]
+collision_layer = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Head/VisionConeAlert" unique_id=1674460894]
+light_mask = 0
+rotation = 1.5707964
+polygon = PackedVector2Array(1.0000054, 124, 94, 83.99999, 130, 1.9999943, 1326, -12.000058, 805.99994, -1010.00006, 437.99994, -1266, 1.9999424, -1318, -396.00006, -1263, -862.00006, -1046, -1322, -17.999943, -119, 1.0000052, -77, 87)
+
+[node name="Interact_area" type="Area2D" parent="." unique_id=1797959126]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("8_hrb7o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interact_area" unique_id=1480351420]
+shape = SubResource("CircleShape2D_xmfpm")
+
+[connection signal="body_entered" from="Head/VisionConeNormal" to="BrainComponent" method="_on_vision_cone_body_entered"]
+[connection signal="body_exited" from="Head/VisionConeNormal" to="BrainComponent" method="_on_vision_cone_body_exited"]
+[connection signal="body_entered" from="Head/VisionConeAlert" to="BrainComponent" method="_on_vision_cone_body_entered"]
+[connection signal="body_exited" from="Head/VisionConeAlert" to="BrainComponent" method="_on_vision_cone_body_exited"]

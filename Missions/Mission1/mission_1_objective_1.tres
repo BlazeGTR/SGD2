@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ObjectiveResource" format=3 uid="uid://bk5mpx4gh5jae"]
+
+[ext_resource type="Script" uid="uid://cymbjap6w8yb2" path="res://Scripts/obective_resource.gd" id="1_euygi"]
+
+[resource]
+script = ExtResource("1_euygi")
+title = "Secure the area"
+description = "Kill or arrest all suspects"
+valid_events = Array[String](["enemy_killed", "enemy_arrested", "hostage_arrested", "hostage_killed"])
+auto_set_to_all = true
+metadata/_custom_type_script = "uid://cymbjap6w8yb2"
