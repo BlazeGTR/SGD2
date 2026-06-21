@@ -8,8 +8,7 @@
 [ext_resource type="Resource" uid="uid://dn40dsk165a8r" path="res://Missions/Mission2/mission_2_objective_2.tres" id="6_yfxmn"]
 [ext_resource type="Resource" uid="uid://c8wrspjsvcnfh" path="res://Missions/Mission2/mission_2_objective_3.tres" id="7_q7xyj"]
 [ext_resource type="PackedScene" uid="uid://cxyk2kcfw6on1" path="res://Scenes/Prefabs/extraction_area.tscn" id="8_6dnnk"]
-[ext_resource type="Script" uid="uid://btm3h0e6icah5" path="res://Scripts/actor_manager.gd" id="8_7jx4b"]
-[ext_resource type="NavigationPolygon" uid="uid://cj8vu2mokar4c" path="res://Assets/Navigation/map_2_nav.tres" id="9_bpwk5"]
+[ext_resource type="NavigationPolygon" uid="uid://cehqat56vk6m5" path="res://Assets/Navigation/Test_Map_navigation_pollygon.tres" id="9_mn2rg"]
 [ext_resource type="TileSet" uid="uid://b2dr3mkmgnncc" path="res://Assets/TileMaps/Wall_tiles.tres" id="10_damqv"]
 [ext_resource type="TileSet" uid="uid://ba7qkach3ual2" path="res://Assets/TileMaps/Floor_Tiles.tres" id="11_vmdm6"]
 [ext_resource type="PackedScene" uid="uid://chrfcwg8jfb5s" path="res://Scenes/Prefabs/test_door.tscn" id="12_jr176"]
@@ -34,15 +33,9 @@ script = ExtResource("1_38nv8")
 combat_music = ExtResource("2_q6g1a")
 metadata/_edit_horizontal_guides_ = [69.0]
 
-[node name="Managers" type="Node" parent="." unique_id=955881113]
-unique_name_in_owner = true
-
-[node name="ObjectiveManager" type="Node" parent="Managers" unique_id=1089730912]
+[node name="ObjectiveManager" type="Node" parent="." unique_id=1928957339]
 script = ExtResource("3_m10f5")
 level_objectives = Array[ExtResource("4_pbvyr")]([ExtResource("5_hxbbt"), ExtResource("6_yfxmn"), ExtResource("7_q7xyj")])
-
-[node name="ActorManager" type="Node" parent="Managers" unique_id=611557854]
-script = ExtResource("8_7jx4b")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=687299518]
 environment = SubResource("Environment_ccivq")
@@ -56,7 +49,7 @@ position = Vector2(358, 1083)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1745705212]
 light_mask = 0
-navigation_polygon = ExtResource("9_bpwk5")
+navigation_polygon = ExtResource("9_mn2rg")
 
 [node name="PatrolRoutes" type="Node" parent="NavigationRegion2D" unique_id=809703692]
 
