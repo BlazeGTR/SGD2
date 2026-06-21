@@ -6,31 +6,30 @@ class_name ObjectiveManager
 var _active_objectives: Array[ObjectiveResource] = []
 
 var current_extraction_state: String = "LOCKED"
+@onready var actor_manager: Node = $"../ActorManager"
 
 func _ready() -> void:
-	# Czekamy na załadowanie wrogów przez GameManagera
+	# Czekamy na załadowanie wrogów przez Managera
 	await get_tree().process_frame
 	
 	GameManager.current_objective_manager = self
 	
-	var total_enemies = GameManager.enemies_left_alive.size()
-	var total_hostages = GameManager.hostages_left_alive.size()
+	var total_enemies = actor_manager.enemies_left_alive.size()
+	var total_hostages = actor_manager.hostages_left_alive.size()
 	
-	GameManager.total_enemies_at_start = total_enemies
+	actor_manager.total_enemies_at_start = total_enemies
 	
 	for obj in level_objectives:
 		if obj != null:
 			var active_obj = obj.duplicate()
 			
-			if active_obj.valid_events.has("hostage_secured") or active_obj.fail_events.has("hostage_killed"):
-				active_obj.reset_objective_state(total_hostages)
-			else:
-				active_obj.reset_objective_state(total_enemies)
+			active_obj.reset_objective_state(total_enemies, total_hostages)
 				
 			_active_objectives.append(active_obj)
 			
 	SignalBus.objective_event_triggered.connect(_on_objective_event)
 	SignalBus.player_died.connect(_on_player_died)
+
 
 func _on_objective_event(event_type: String, amount: int) -> void:
 	print("sprawdzanie: ", event_type)
@@ -49,7 +48,8 @@ func _on_objective_event(event_type: String, amount: int) -> void:
 				
 		# 3. Sprawdzanie soft-locka matematycznego (dla celów "Aresztuj X")
 		if obj.fail_if_not_enough_enemies:
-			obj.check_for_math_failure(GameManager.total_enemies_at_start, GameManager.enemies_killed, GameManager.enemies_arrested)
+			obj.check_for_math_failure(actor_manager.total_enemies_at_start, actor_manager.enemies_killed, actor_manager.enemies_arrested,
+										actor_manager.total_civilians_at_start, actor_manager.civilians_killed, actor_manager.civilians_arrested)
 
 		_check_mission_status()
 
@@ -72,8 +72,8 @@ func _check_mission_status() -> void:
 		current_extraction_state = "SUCCESS_AVALIBLE"
 		print("Centrala: Teren czysty. Udajcie się do punktu ewakuacji.")
 		SignalBus.extraction_enabled.emit(true) # True = Sukces
-	
-	
+
+
 func save_final_results_and_evaluate_success() -> bool:
 	GameManager.last_objective_results.clear()
 	var final_mission_success = true

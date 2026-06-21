@@ -162,6 +162,7 @@ theme_override_font_sizes/font_size = 12
 autowrap_mode = 2
 
 [node name="BriefingPanel" type="PanelContainer" parent="MarginContainer/MainVBox/Panels" unique_id=1233923204]
+visible = false
 layout_mode = 2
 theme_override_styles/panel = ExtResource("3_cjpoh")
 
@@ -227,13 +228,13 @@ autowrap_mode = 0
 vertical_alignment = 2
 
 [node name="EquipmentPanel" type="PanelContainer" parent="MarginContainer/MainVBox/Panels" unique_id=1175785448]
-visible = false
 layout_mode = 2
 theme_override_styles/panel = ExtResource("3_cjpoh")
 
 [node name="EquipmentPanelHBox" type="VBoxContainer" parent="MarginContainer/MainVBox/Panels/EquipmentPanel" unique_id=1178636121]
 layout_mode = 2
 script = ExtResource("3_67jty")
+unlock_all_weapons = true
 
 [node name="WeaponSlots" type="HBoxContainer" parent="MarginContainer/MainVBox/Panels/EquipmentPanel/EquipmentPanelHBox" unique_id=1467218285]
 layout_mode = 2

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://jvqb66makafy" path="res://Scenes/status_bars.gd" id="1_6fbih"]
 [ext_resource type="Script" uid="uid://4ub05aawtxvg" path="res://Scenes/ammo_display.gd" id="2_6fbih"]
 [ext_resource type="Texture2D" uid="uid://dvvt3gxsabmb7" path="res://External_resources/Art/bullet.png" id="2_bjfho"]
-[ext_resource type="Texture2D" uid="uid://3t3qn0mai31f" path="res://External_resources/Art/Assault_rifle_HUD_icon.png" id="2_fccik"]
+[ext_resource type="Texture2D" uid="uid://3t3qn0mai31f" path="res://External_resources/Art/WeaponIcons/Assault_rifle_HUD_icon.png" id="2_fccik"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t1xeu"]
 bg_color = Color(0.21795458, 7.396493e-05, 0.24746877, 1)

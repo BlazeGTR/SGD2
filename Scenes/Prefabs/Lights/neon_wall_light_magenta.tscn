@@ -26,6 +26,7 @@ light_mask = 0
 z_index = 10
 script = ExtResource("1_y3wod")
 noise_speed = 20.0
+noise_intensity = 0.06
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1263996375]
 self_modulate = Color(18.379, 0, 22.162, 1)

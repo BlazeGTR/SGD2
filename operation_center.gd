@@ -96,7 +96,7 @@ func _on_mission_selected(mission: MissionResource) -> void:
 
 func _on_back_pressed() -> void:
 	if panels["mission"].visible:
-		GameManager.go_to_main_menu()
+		SceneManager.go_to_main_menu()
 	elif panels["briefing"].visible:
 		_show_panel("mission")
 	elif panels["equipment"].visible:
@@ -212,9 +212,11 @@ func _setup_debrief() -> void:
 	var breakdown_text = "OPERATIONAL STATISTICS\n"
 	breakdown_text += "--------------------------------------\n"
 	breakdown_text += "Operation Time:\t\t\t\t\t\t" + time_string + "\n"
-	breakdown_text += "Suspects Neutralized:\t\t\t\t" + str(GameManager.enemies_killed + GameManager.enemies_arrested) + "\n"
-	breakdown_text += "  - Suspects Killed:\t\t\t\t" + str(GameManager.enemies_killed) + "\n"
-	breakdown_text += "  - Suspects Arrested:\t\t\t\t" + str(GameManager.enemies_arrested) + "\n"
+	breakdown_text += "Suspects Neutralized:\t\t\t\t" + str(GameManager.last_enemies_killed + GameManager.last_enemies_arrested) + "\n"
+	breakdown_text += "  - Suspects Killed:\t\t\t\t" + str(GameManager.last_enemies_killed) + "\n"
+	breakdown_text += "  - Suspects Arrested:\t\t\t\t" + str(GameManager.last_enemies_arrested) + "\n"
+	breakdown_text += "  - Civilians Killed:\t\t\t\t" + str(GameManager.last_civilians_killed) + "\n"
+	breakdown_text += "  - Civilians Arrested:\t\t\t\t" + str(GameManager.last_civilians_arrested) + "\n"
 	breakdown_text += "Evidence Secured:\t\t\t\t\t" + "0\n"
 	breakdown_text += "--------------------------------------\n"
 	

@@ -10,7 +10,10 @@ var morale_changed: bool = true
 var stun_timer: Timer
 var is_arrested: bool = false
 
+var actor_manager
+
 func _ready() -> void:
+	actor_manager = get_tree().get_first_node_in_group("actor_manager")
 	stun_timer = Timer.new()
 	stun_timer.one_shot = true
 	stun_timer.timeout.connect(finish_stun)
@@ -50,15 +53,14 @@ func die():
 	
 	if not is_arrested:
 		if parent is Enemy:
-			GameManager.remove_enemy(parent)
 			GameManager.add_score(parent.score)
-			GameManager.enemies_killed += 1
 			SignalBus.objective_event_triggered.emit("enemy_killed", 1)
+			SignalBus.kill_enemy.emit(parent)
 			
 		elif parent is Hostage:
-			GameManager.remove_hostage(parent)
 			GameManager.add_score(parent.score) 
 			SignalBus.objective_event_triggered.emit("hostage_killed", 1)
+			SignalBus.kill_hostage.emit(parent)
 			
 	else:
 		if parent is Enemy:

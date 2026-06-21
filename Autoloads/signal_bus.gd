@@ -13,3 +13,8 @@ signal brightness_changed(value)
 signal extraction_enabled(was_successful: bool)
 signal objective_event_triggered(event_name, amount)
 signal player_died
+
+signal arrest_hostage
+signal arrest_enemy
+signal kill_hostage
+signal kill_enemy

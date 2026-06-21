@@ -93,6 +93,7 @@ func finish_reload():
 	is_reloading = false
 	reload_finished.emit()
 
+
 func _spawn_projectile():
 	for i in weapon_data.projectiles_per_shot:
 		var bullet = weapon_data.projectile_scene.instantiate()
@@ -109,3 +110,13 @@ func _spawn_projectile():
 
 		if bullet.has_method("set_damage"):
 			bullet.set_damage(weapon_data.damage, 0)
+
+
+func drop_weapon():
+	var dropped_gun = weapon_data.dropped_weapon_object.instantiate()
+	
+	dropped_gun.global_position = enemy.global_position
+	get_parent().get_parent().add_child(dropped_gun)
+	
+	dropped_gun.linear_velocity = (Vector2.LEFT.rotated(randf_range(0, 2*PI))) * randf_range(300.0, 400.0)
+	dropped_gun.angular_velocity = randf_range(-50.0, 50.0)

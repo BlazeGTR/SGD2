@@ -33,6 +33,7 @@ ItemDatabase="*uid://d210lkbjiyqj8"
 PauseMenuLayer="*uid://bauv5e06nj7ct"
 TutorialPopup="*uid://bks46qdopbr0i"
 AudioManager="*uid://b4wedhadsersv"
+SceneManager="*uid://bwaipfutag8mq"
 
 [display]
 

@@ -6,7 +6,7 @@
 script = ExtResource("1_wj82b")
 title = "Secure 2 hostages"
 description = "Secure at least two hostages"
-valid_events = Array[String](["hostage_secured"])
+valid_events = Array[String](["hostage_arrested"])
 is_mandatory = false
 target_amount = 2
 metadata/_custom_type_script = "uid://cymbjap6w8yb2"

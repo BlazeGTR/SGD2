@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://cfge3jesju86m" path="res://External_resources/Art/controls.png" id="1_er2x6"]
 [ext_resource type="Script" uid="uid://1hdy4na5o271" path="res://Scenes/tutorial_popup.gd" id="1_hkgca"]
-[ext_resource type="Texture2D" uid="uid://doegwydnipe6n" path="res://External_resources/Art/Arrest_tutorial.png" id="2_uv2lm"]
-[ext_resource type="Texture2D" uid="uid://ckwoy1kne7egd" path="res://External_resources/Art/Interact_tutorial.png" id="3_xyudg"]
-[ext_resource type="Texture2D" uid="uid://bcifo7wrhutnp" path="res://External_resources/Art/Extraction_tutorial.png" id="4_8imke"]
+[ext_resource type="Texture2D" uid="uid://doegwydnipe6n" path="res://External_resources/Art/Tutorial/Arrest_tutorial.png" id="2_uv2lm"]
+[ext_resource type="Texture2D" uid="uid://ckwoy1kne7egd" path="res://External_resources/Art/Tutorial/Interact_tutorial.png" id="3_xyudg"]
+[ext_resource type="Texture2D" uid="uid://bcifo7wrhutnp" path="res://External_resources/Art/Tutorial/Extraction_tutorial.png" id="4_8imke"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uv2lm"]
 bg_color = Color(0.73300546, 0.73300546, 0.7330052, 1)

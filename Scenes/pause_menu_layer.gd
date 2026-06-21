@@ -51,7 +51,7 @@ func _on_menu_pressed() -> void:
 	get_tree().paused = false
 	hide()
 
-	GameManager.go_to_main_menu()
+	SceneManager.go_to_main_menu()
 
 func on_help_pressed():
 	TutorialPopup.open_tutorial()

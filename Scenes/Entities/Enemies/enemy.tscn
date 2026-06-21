@@ -6,13 +6,14 @@
 [ext_resource type="Script" uid="uid://b44utnruuoglk" path="res://Scenes/Entities/Enemies/Components/Brains/brain_component.gd" id="3_748yg"]
 [ext_resource type="Script" uid="uid://cwhefd4iqg3xn" path="res://Scenes/Entities/Enemies/weapon_component.gd" id="3_w4jud"]
 [ext_resource type="Script" uid="uid://kdu2tkwqvkem" path="res://Resources/Weapons/weapon_resource.gd" id="4_5ncfx"]
+[ext_resource type="PackedScene" uid="uid://jttmtyv41wpd" path="res://Resources/Weapons/dropped_gun.tscn" id="5_pb4lw"]
 [ext_resource type="PackedScene" uid="uid://ddr3251k6dvt2" path="res://Scenes/Weapons/Enemies/enemy_bullet.tscn" id="5_xmfpm"]
-[ext_resource type="Texture2D" uid="uid://dxh15qjlh7vuo" path="res://External_resources/Art/Player_placeholder.png" id="6_5ncfx"]
+[ext_resource type="Texture2D" uid="uid://dxh15qjlh7vuo" path="res://External_resources/Art/Actors/Player_placeholder.png" id="6_5ncfx"]
 [ext_resource type="AudioStream" uid="uid://dojoy2uvunupr" path="res://External_resources/Audio/Pistol_shot.mp3" id="7_plmqs"]
 [ext_resource type="Script" uid="uid://dw8tsyh86qgoy" path="res://Scenes/Entities/Enemies/enemy_interact_area.gd" id="8_hrb7o"]
 [ext_resource type="AudioStream" uid="uid://s8c4a4axwfbc" path="res://External_resources/Audio/Rifle_reload.mp3" id="8_pb4lw"]
-[ext_resource type="Texture2D" uid="uid://wjf71u31um0w" path="res://External_resources/Art/Enemy_Surrender.png" id="9_i5qoo"]
-[ext_resource type="Texture2D" uid="uid://drjnlolcxs2o" path="res://External_resources/Art/Arrested_sprite.png" id="10_ymwpi"]
+[ext_resource type="Texture2D" uid="uid://wjf71u31um0w" path="res://External_resources/Art/Actors/Enemy_Surrender.png" id="9_i5qoo"]
+[ext_resource type="Texture2D" uid="uid://drjnlolcxs2o" path="res://External_resources/Art/Actors/Arrested_sprite.png" id="10_ymwpi"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_748yg"]
 polygon = PackedVector2Array(9, 20, 26, 15, 31, 0, 26, -15, 9, -21, -8, -15, -13, 0, -8, 14)
@@ -22,6 +23,7 @@ polygon = PackedVector2Array(9, 20, 26, 15, 31, 0, 26, -15, 9, -21, -8, -15, -13
 [sub_resource type="Resource" id="Resource_4cflg"]
 script = ExtResource("4_5ncfx")
 name = "AI_Weapon"
+dropped_weapon_object = ExtResource("5_pb4lw")
 sound_fire = ExtResource("7_plmqs")
 sound_reload = ExtResource("8_pb4lw")
 projectile_scene = ExtResource("5_xmfpm")
@@ -84,6 +86,7 @@ shape = SubResource("CircleShape2D_a27yh")
 
 [node name="NormalSprite" type="Sprite2D" parent="." unique_id=1282506855]
 light_mask = 2
+z_index = 10
 position = Vector2(28, 2)
 rotation = 1.5707964
 texture = ExtResource("6_5ncfx")
@@ -91,6 +94,7 @@ texture = ExtResource("6_5ncfx")
 [node name="SurrenderSprite" type="Sprite2D" parent="." unique_id=82890729]
 visible = false
 light_mask = 2
+z_index = 10
 position = Vector2(3, 2)
 rotation = 1.5707964
 texture = ExtResource("9_i5qoo")
@@ -98,6 +102,7 @@ texture = ExtResource("9_i5qoo")
 [node name="ArrestedSprite" type="Sprite2D" parent="." unique_id=1714339799]
 visible = false
 light_mask = 2
+z_index = 10
 position = Vector2(-5, -2)
 rotation = 1.5707964
 texture = ExtResource("10_ymwpi")
@@ -120,6 +125,7 @@ text = "DEBUG LABEL"
 label_settings = SubResource("LabelSettings_5ncfx")
 
 [node name="Head" type="Node2D" parent="." unique_id=1308694110]
+visible = false
 
 [node name="RayCast2D" type="RayCast2D" parent="Head" unique_id=1407645394]
 enabled = false

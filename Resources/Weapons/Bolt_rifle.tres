@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://3qjhxpiqp2w2" path="res://External_resources/Audio/item_equip.mp3" id="4_hh1v7"]
 [ext_resource type="AudioStream" uid="uid://bav4wj6dndlkh" path="res://External_resources/Audio/Rifle_shot.mp3" id="5_kih76"]
 [ext_resource type="AudioStream" uid="uid://s8c4a4axwfbc" path="res://External_resources/Audio/Rifle_reload.mp3" id="6_hev3x"]
-[ext_resource type="Texture2D" uid="uid://3t3qn0mai31f" path="res://External_resources/Art/Assault_rifle_HUD_icon.png" id="7_lrtr0"]
+[ext_resource type="Texture2D" uid="uid://3t3qn0mai31f" path="res://External_resources/Art/WeaponIcons/Assault_rifle_HUD_icon.png" id="7_lrtr0"]
 
 [resource]
 script = ExtResource("1_fyfli")

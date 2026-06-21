@@ -20,10 +20,13 @@ var is_reloading: bool = false
 var poly_playback: AudioStreamPlaybackPolyphonic = null
 var current_recoil: float = 0.0
 
+var actor_manager # for sound reporting
+
 signal player_reload_started(duration)
 signal player_reload_finished()
 
 func _ready() -> void:
+	actor_manager = get_tree().get_first_node_in_group("actor_manager")
 	_load_loadout_from_save()
 	
 	# na start misji przeładuj wszystkie bronie
@@ -126,7 +129,7 @@ func shoot() -> void:
 		var muzzle_flash_fx = current_weapon.muzzle_flash_effect.instantiate()
 		muzzle.add_child(muzzle_flash_fx)
 	
-	GameManager.report_sound(global_position, current_weapon.noise_radius)
+	actor_manager.report_sound(global_position, current_weapon.noise_radius)
 	timer.start() 
 	match current_weapon.attack_type:
 		0:
