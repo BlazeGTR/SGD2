@@ -22,6 +22,7 @@ enum SlotType { PRIMARY, SECONDARY, GADGET, TACTICAL } # w jakim slocie jest bro
 @export var texture: Texture2D
 @export var weapon_hud_icon: Texture2D
 @export var muzzle_flash_effect: PackedScene
+@export var dropped_weapon_object: PackedScene
 
 @export_group("Audio")
 @export var sound_fire: AudioStream

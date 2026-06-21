@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://dy2t3ff7h545j" path="res://Scenes/main_menu.gd" id="1_28flt"]
 [ext_resource type="PackedScene" uid="uid://b5wexdue33hq4" path="res://Missions/operation_center.tscn" id="2_48xlc"]
 [ext_resource type="AudioStream" uid="uid://do5r4ancfkcsl" path="res://External_resources/Music/Star Eater.mp3" id="3_1ehe0"]
+[ext_resource type="Script" uid="uid://8wtmxqhrlfp" path="res://Scenes/label.gd" id="4_ce3w2"]
+[ext_resource type="FontFile" uid="uid://c0sxnenn3t5ot" path="res://External_resources/ROGFontsv1.6-Regular.ttf" id="4_n45e2"]
 
 [sub_resource type="Gradient" id="Gradient_1ehe0"]
 colors = PackedColorArray(0.2545983, 0.00016176746, 0.3109046, 1, 0.4666667, 0, 1, 1)
@@ -35,19 +37,31 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_28flt")
 
 [node name="Label" type="Label" parent="." unique_id=1608288501]
-visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.212
 anchor_right = 1.0
-anchor_bottom = 0.399
-offset_top = -49.32
-offset_bottom = -44.64
+anchor_bottom = 1.0
+offset_left = 201.0
+offset_top = 20.000002
+offset_right = 3.0
+offset_bottom = -250.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 52
-text = "Title"
+rotation = -0.084129356
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("4_n45e2")
+theme_override_font_sizes/font_size = 74
+text = "ENFORCER"
 horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+script = ExtResource("4_ce3w2")
+max_rotation = 0.1
+rotation_speed = 0.6
+max_scale = 0.03
+scale_speed = 2.0
+max_position = 5.0
+position_speed = 1.0
 
 [node name="MainButtons" type="MarginContainer" parent="." unique_id=534682792]
 layout_mode = 1
@@ -149,6 +163,7 @@ theme_override_font_sizes/font_size = 43
 text = "Back"
 
 [node name="SettingsPanel" type="MarginContainer" parent="." unique_id=1230460264]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

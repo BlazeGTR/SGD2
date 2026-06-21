@@ -30,6 +30,10 @@ var active_slot: String = "primary"
 var available_items: Array[String] = [] 
 var current_item_index: int = 0 
 
+@export_category("DEBUG")
+@export var unlock_all_weapons: bool = false
+
+
 func _ready() -> void:
 	# Automatyczne odświeżanie przy przełączaniu paneli
 	visibility_changed.connect(_on_visibility_changed)
@@ -74,7 +78,14 @@ func _select_slot(slot_name: String) -> void:
 
 func _get_items_for_slot(slot_name: String) -> Array[String]:
 	var list: Array[String] = []
-	var unlocked = SaveManager.current_data.get("unlocked_items", [])
+	
+	var unlocked: Array = []
+	if not unlock_all_weapons:
+		unlocked = SaveManager.current_data.get("unlocked_items", [])
+	else:
+		unlocked.append_array(ItemDatabase.get_all_weapon_ids())
+		unlocked.append_array(ItemDatabase.get_all_armor_ids())
+		unlocked.append_array(ItemDatabase.non_weapon_db.keys())
 	
 	var none_id = "implant_none" if slot_name == "implant" else "none"
 	list.append(none_id)

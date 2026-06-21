@@ -33,9 +33,13 @@ var danger_position: Vector2 = Vector2.ZERO
 var panic_timer: float = 0.0
 var is_stunned: bool = false
 
+var actor_manager
+
 func _ready() -> void:
 	var parent = get_parent()
-	GameManager.add_new_hostage(parent)
+	
+	actor_manager = get_tree().get_first_node_in_group("actor_manager")
+	actor_manager.add_new_hostage(parent)
 	_setup_initial_vision()
 
 
@@ -218,15 +222,15 @@ func arrest():
 	var parent_node = get_parent()
 	current_state = State.ARRESTED
 	
-	GameManager.hostages_left_alive.erase(parent_node)
+	SignalBus.emit_signal("arrest_hostage", parent_node)
 	GameManager.add_score(parent_node.score * parent_node.score_surrender_multiplier)
 	
 	health.get_arrested()
 	interact_area.disable()
 	
+	
 	current_sprite.hide()
 	arrested_sprite.show()
 	current_sprite = arrested_sprite
 	
-	print("emmiting: hostage_secured ")
-	SignalBus.objective_event_triggered.emit("hostage_secured", 1)
+	SignalBus.objective_event_triggered.emit("hostage_arrested", 1)

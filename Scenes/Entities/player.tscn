@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dhgempmuynw23" path="res://Scripts/player_camera_follow_mouse.gd" id="2_ofjh0"]
 [ext_resource type="Script" uid="uid://c3m5f27b1iuvn" path="res://Scenes/Weapons/Player/weapon_manager.gd" id="3_2hnfo"]
 [ext_resource type="PackedScene" uid="uid://cbbpjx323r4v0" path="res://Scenes/hud.tscn" id="3_y18yp"]
-[ext_resource type="Texture2D" uid="uid://dxh15qjlh7vuo" path="res://External_resources/Art/Player_placeholder.png" id="6_14y0q"]
+[ext_resource type="Texture2D" uid="uid://dxh15qjlh7vuo" path="res://External_resources/Art/Actors/Player_placeholder.png" id="6_14y0q"]
 [ext_resource type="Script" uid="uid://bhi8d725elbah" path="res://Scenes/Entities/player_health_manager.gd" id="8_2hnfo"]
 [ext_resource type="Script" uid="uid://d141qbxwcxhat" path="res://Scenes/Entities/hud_canvas_layer.gd" id="8_y18yp"]
 [ext_resource type="Script" uid="uid://bmkokrkcvi0lq" path="res://Scenes/Entities/player_interaction.gd" id="12_f5ba2"]

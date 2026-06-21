@@ -7,11 +7,14 @@ var current_speed: float
 @onready var muzzle_position: Marker2D = $WeaponManager/MuzzlePosition
 @onready var shout_raycast: RayCast2D = $ShoutRaycast
 @onready var interaction_area: Area2D = $InteractionArea
-@onready var health_manager: Node = $HealthManager
+@onready var health_manager: Node = $HealthComponent
+
+var actor_manager
 
 
 func _ready() -> void:
 	GameManager.set_player(self)
+	actor_manager = get_tree().get_first_node_in_group("actor_manager")
 
 
 func _process(delta: float) -> void:
@@ -47,7 +50,7 @@ func _input(event: InputEvent) -> void:
 ### Yelling
 	if event.is_action_pressed("Shout"):
 		# Łączymy wrogów i cywili w jedną tymczasową listę do sprawdzenia
-		var all_targets = GameManager.enemies_left_alive + GameManager.hostages_left_alive
+		var all_targets = actor_manager.enemies_left_alive + actor_manager.hostages_left_alive
 		
 		for target in all_targets:
 			if not is_instance_valid(target):

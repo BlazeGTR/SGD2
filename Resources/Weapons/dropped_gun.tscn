@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://jttmtyv41wpd"]
+
+[ext_resource type="Texture2D" uid="uid://bxltvgrcb7gh" path="res://External_resources/Art/gun_dropped.png" id="1_puisc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_puisc"]
+size = Vector2(104, 30)
+
+[node name="dropped_gun" type="RigidBody2D" unique_id=458007095]
+collision_layer = 0
+collision_mask = 4
+gravity_scale = 0.0
+linear_damp = 5.0
+angular_damp = 5.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1724135205]
+position = Vector2(17.25, 5)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_puisc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1274656476]
+position = Vector2(17, 5)
+shape = SubResource("RectangleShape2D_puisc")

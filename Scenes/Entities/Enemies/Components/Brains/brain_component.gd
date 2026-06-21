@@ -35,7 +35,7 @@ var current_state: State = State.IDLE
 @onready var debug_label: Label = $"../DebugLabel"
 @onready var interact_area: Area2D = $"../Interact_area"
 
-# Zmiana: Sensory są teraz w głowie
+# Sensory są w głowie
 @onready var head: Node2D = $"../Head"
 @onready var raycast: RayCast2D = $"../Head/RayCast2D"
 @onready var vision_cone_normal: Area2D = $"../Head/VisionConeNormal"
@@ -49,6 +49,7 @@ var los_timer: float = 0.0
 var is_holding_position: bool = false
 var is_stunned: bool = false
 @onready var player = GameManager.player
+var actor_manager
 
 var has_been_alerted: bool = false
 var is_looking_around: bool = false
@@ -63,9 +64,13 @@ var _current_patrol_index: int = 0
 var _patrol_timer: float = 0.0
 
 
+
+
 func _ready() -> void:
 	var parent = get_parent()
-	GameManager.add_new_enemy(parent)
+	
+	actor_manager = get_tree().get_first_node_in_group("actor_manager")
+	actor_manager.add_new_enemy(parent)
 	print("adding enemy")
 	
 	if "patrol_wait_time" in parent:
@@ -435,13 +440,15 @@ func force_surrender():
 	current_sprite.hide()
 	surrender_sprite.show()
 	current_sprite = surrender_sprite
+	weapon.drop_weapon()
 
 func arrest():
 	var parent_node = get_parent()
 	current_state = State.ARRESTED
-	GameManager.remove_enemy(parent_node)
+	
+	SignalBus.emit_signal("arrest_enemy", parent_node)
 	GameManager.add_score(parent_node.score * parent_node.score_surrender_multiplier)
-	GameManager.enemies_arrested += 1
+
 	health.get_arrested()
 	interact_area.disable()
 	
@@ -451,4 +458,3 @@ func arrest():
 	current_sprite = arrested_sprite
 	
 	SignalBus.objective_event_triggered.emit("enemy_arrested", 1)
-	print("arrested")
