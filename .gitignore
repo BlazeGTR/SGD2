@@ -1,3 +1,5 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+Build/Enforcer.exe
+Build/Enforcer.console.exe

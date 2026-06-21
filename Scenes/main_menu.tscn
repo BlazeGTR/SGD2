@@ -3,8 +3,6 @@
 [ext_resource type="Script" uid="uid://dy2t3ff7h545j" path="res://Scenes/main_menu.gd" id="1_28flt"]
 [ext_resource type="PackedScene" uid="uid://b5wexdue33hq4" path="res://Missions/operation_center.tscn" id="2_48xlc"]
 [ext_resource type="AudioStream" uid="uid://do5r4ancfkcsl" path="res://External_resources/Music/Star Eater.mp3" id="3_1ehe0"]
-[ext_resource type="Script" uid="uid://8wtmxqhrlfp" path="res://Scenes/label.gd" id="4_ce3w2"]
-[ext_resource type="FontFile" uid="uid://c0sxnenn3t5ot" path="res://External_resources/ROGFontsv1.6-Regular.ttf" id="4_n45e2"]
 
 [sub_resource type="Gradient" id="Gradient_1ehe0"]
 colors = PackedColorArray(0.2545983, 0.00016176746, 0.3109046, 1, 0.4666667, 0, 1, 1)
@@ -12,6 +10,9 @@ colors = PackedColorArray(0.2545983, 0.00016176746, 0.3109046, 1, 0.4666667, 0, 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_28flt"]
 gradient = SubResource("Gradient_1ehe0")
 fill_from = Vector2(0.22222222, 0.53418803)
+
+[sub_resource type="SystemFont" id="SystemFont_1ehe0"]
+font_names = PackedStringArray("ROG Fonts v1.6")
 
 [sub_resource type="SystemFont" id="SystemFont_48xlc"]
 font_names = PackedStringArray("Impact")
@@ -48,20 +49,11 @@ offset_bottom = -250.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.084129356
-pivot_offset_ratio = Vector2(0.5, 0.5)
-theme_override_fonts/font = ExtResource("4_n45e2")
+theme_override_fonts/font = SubResource("SystemFont_1ehe0")
 theme_override_font_sizes/font_size = 74
 text = "ENFORCER"
 horizontal_alignment = 1
-vertical_alignment = 1
 uppercase = true
-script = ExtResource("4_ce3w2")
-max_rotation = 0.1
-rotation_speed = 0.6
-max_scale = 0.03
-scale_speed = 2.0
-max_position = 5.0
-position_speed = 1.0
 
 [node name="MainButtons" type="MarginContainer" parent="." unique_id=534682792]
 layout_mode = 1

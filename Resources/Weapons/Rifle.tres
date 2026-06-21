@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cf1e68lgck5o3" path="res://Scenes/Weapons/Player/bullets/test_bullet.tscn" id="1_6lubl"]
 [ext_resource type="PackedScene" uid="uid://c7g4thm5hs6j0" path="res://Scenes/Effects/muzzle_flash_fx.tscn" id="1_71rrp"]
 [ext_resource type="Script" uid="uid://kdu2tkwqvkem" path="res://Resources/Weapons/weapon_resource.gd" id="2_dppv7"]
-[ext_resource type="AudioStream" uid="uid://bav4wj6dndlkh" path="res://External_resources/Audio/Rifle_shot.mp3" id="3_hopne"]
+[ext_resource type="AudioStream" uid="uid://bav4wj6dndlkh" path="res://External_resources/Audio/Guns/Rifle_shot.mp3" id="3_hopne"]
 [ext_resource type="AudioStream" uid="uid://3qjhxpiqp2w2" path="res://External_resources/Audio/item_equip.mp3" id="3_x0p01"]
 [ext_resource type="AudioStream" uid="uid://s8c4a4axwfbc" path="res://External_resources/Audio/Rifle_reload.mp3" id="4_x0p01"]
 [ext_resource type="Texture2D" uid="uid://3t3qn0mai31f" path="res://External_resources/Art/WeaponIcons/Assault_rifle_HUD_icon.png" id="6_71rrp"]
